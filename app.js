@@ -15,13 +15,34 @@ var map = L.map('map').fitWorld();
 			.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
 		L.circle(e.latlng, radius).addTo(map);
+    alert(radius);
+    alert(e.latlng.lat);
+    alert(e.latlng.lng);
+    getNearPlaces(e.latlng.lat, e.latlng.lng);
 	}
 
 	function onLocationError(e) {
 		alert(e.message);
 	}
 
+  function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+  }
+
+
 	map.on('locationfound', onLocationFound);
 	map.on('locationerror', onLocationError);
+  map.on('click', onMapClick);
 
 	map.locate({setView: true, maxZoom: 16});
+
+  window.getNearPlaces = (lat, long) => {
+    return fetch('http://159.65.98.171/v1/places/'+ lat + ','+ long)
+    .then((responses) => {
+      console.log(responses);
+      return responses.json();
+    }).then((responses) => {
+      console.log(responses);
+    });
+
+  };
