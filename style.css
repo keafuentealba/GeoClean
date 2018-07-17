@@ -1,9 +1,50 @@
 body {
-    padding: 0;
-    margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url(eddie.jpg);
+  margin: 200px;
 }
-html, body, #map {
-    
-    width: 580px;
-    height: 580px;
+
+.omb_authTitle  {
+  font-size: 50px;
+
+}
+
+.omb_login {
+  margin-top: 10%;
+}
+
+.omb_login i{
+  padding: 2em;
+ }
+
+#logo {
+  margin: auto;
+  padding: 3em;
+}
+
+.form-control{
+  height: 100px;
+  font-size: 25px;
+}
+#login {
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  background: #4ecca3;
+  border-color: #1cc48c;
+}
+
+#loginFirst #facebook i {
+  color:white;
+  background: #3B5998;
+
+}
+
+#loginFirst #google i {
+  background: #d62d20;
+  color: white;
+}
+
+.hidden {
+  display: none;
 }
